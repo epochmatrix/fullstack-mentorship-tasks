@@ -11,7 +11,7 @@ const addStudent = (id, name, DOB, email, department) => {
 
 // view list students 
 const listStudents = () => {
-    if (student.length === 0) {
+    if (students.length === 0) {
         console.log("No students found.");
     }; 
 
@@ -24,6 +24,13 @@ const listStudents = () => {
 
 // search student by id 
 const searchStudent =(id) => {
+    const foundStudent = students.find(student => student.id === id);
+    if (foundStudent) {
+        console.log(`Student found: ID: ${foundStudent.id} | Name: ${foundStudent.name} | DOB: ${foundStudent.DOB} | Email: ${foundStudent.email} | Dept: ${foundStudent.department}`);
+    } else {
+        console.log(`Student with ID ${id} not found.`);
+        return null;
+    }
 
 }; 
 
@@ -47,3 +54,6 @@ addStudent(3, "Ferhan Reyan", "2002-11-29", "ferhan@gmail.com", "Computer Scienc
 console.log("Updated Database:", students);
 
 listStudents();
+
+searchStudent(2);
+searchStudent(5);

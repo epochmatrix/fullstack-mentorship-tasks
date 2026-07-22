@@ -46,10 +46,18 @@ const updateStudent = (id, updatedData) => {
     }
 };
 
-//delete student
-// const deleteStudent = (id) => {
+delete student
+const deleteStudent = (id) => {
+    const studentExists = students.some(student => student.id === id);
 
-// }; 
+    if (studentExists) {
+        students = students.filter(student => student.id !== id);
+        console.log(`Student with ID ${id} deleted successfully.`);
+    } else {
+        console.log(`Student with ID ${id} not found.`);
+    }
+
+};
 
 
 console.log("Student Managment System Initialized");

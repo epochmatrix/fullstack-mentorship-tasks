@@ -73,6 +73,79 @@ addStudent(3, "Ferhan Reyan", "2002-11-29", "ferhan@gmail.com", "Computer Scienc
 // searchStudent(2);
 // searchStudent(5);
 
-updateStudent(3, { email: "ferhan_new@gmail.com", department: "Software Engineering" });
-listStudents();
+// updateStudent(3, { email: "ferhan_new@gmail.com", department: "Software Engineering" });
 
+// deleteStudent(2);
+// listStudents();
+
+const showMenu = () => {
+    console.log("\nStudent Management System Menu:");
+    console.log("1. Add Student");
+    console.log("2. List Students");
+    console.log("3. Search Student by ID");
+    console.log("4. Update Student");
+    console.log("5. Delete Student");
+    console.log("6. Exit");
+
+    rl.question("\nEnter your choice (1-6): ", (choice) => {
+        switch (choice) {
+            case '1':
+                rl.question("Enter Student ID: ", (id) => {
+                    rl.question("Enter Student Name: ", (name) => {
+                        rl.question("Enter Student DOB (YYYY-MM-DD): ", (DOB) => {
+                            rl.question("Enter Student Email: ", (email) => {
+                                rl.question("Enter Student Department: ", (department) => {
+                                    addStudent(id, name, DOB, email, department);
+                                    showMenu();
+                                });
+                            });
+                        });
+                    });
+                });
+                break;
+            case '2':
+                listStudents();
+                showMenu();
+                break;
+            case '3':
+                rl.question("Enter Student ID to search: ", (id) => {
+                    searchStudent(id);
+                    showMenu();
+                });
+                break;
+            case '4':
+                rl.question("Enter Student ID to update: ", (id) => {
+                    rl.question("Enter new Student Name (leave blank to keep unchanged): ", (name) => {
+                        rl.question("Enter new Student DOB (YYYY-MM-DD, leave blank to keep unchanged): ", (DOB) => {
+                            rl.question("Enter new Student Email (leave blank to keep unchanged): ", (email) => {
+                                rl.question("Enter new Student Department (leave blank to keep unchanged): ", (department) => {
+                                    const updatedData = {};
+                                    if (name) updatedData.name = name;
+                                    if (DOB) updatedData.DOB = DOB;
+                                    if (email) updatedData.email = email;
+                                    if (department) updatedData.department = department;
+                                    updateStudent(id, updatedData);
+                                    showMenu();
+                                });
+                            });
+                        });
+                    });
+                });
+                break;
+            case '5':
+                rl.question("Enter Student ID to delete: ", (id) => {
+                    deleteStudent(id);
+                    showMenu();
+                });
+                break;
+            case '6':
+                console.log("Exiting Student Management System. Goodbye!");
+                rl.close();
+                break;  
+            default:
+                console.log("Invalid choice. Please try again.");
+                showMenu();
+                break;
+        }
+    });   
+};

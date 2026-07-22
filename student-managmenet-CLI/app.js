@@ -11,10 +11,18 @@ const addStudent = (id, name, DOB, email, department) => {
 
 // view list students 
 const listStudents = () => {
-    
+    if (student.length === 0) {
+        console.log("No students found.");
+    }; 
+
+    console.log("List of Students:");
+    students.forEach((student, index) => {
+         console.log(`${index + 1}. ID: ${student.id} | Name: ${student.name} | DOB: ${student.DOB} | Email: ${student.email} | Dept: ${student.department}`);
+    });
+    console.log("===============================\n");
 };
 
-// serach student by id 
+// search student by id 
 const searchStudent =(id) => {
 
 }; 
@@ -37,3 +45,5 @@ addStudent(2, "Wildan Abdulmejid", "2002-11-29", "wildan@gmail.com", "Computer S
 addStudent(3, "Ferhan Reyan", "2002-11-29", "ferhan@gmail.com", "Computer Science");
 
 console.log("Updated Database:", students);
+
+listStudents();

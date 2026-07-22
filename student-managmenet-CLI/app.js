@@ -1,6 +1,13 @@
 //Student Management App
 
+const readline = require('readline');
+
 let students = []; // Array to store student records
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 // Function to add a new student
 const addStudent = (id, name, DOB, email, department) => {
@@ -60,11 +67,11 @@ const deleteStudent = (id) => {
 };
 
 
-console.log("Student Managment System Initialized");
-console.log("current students:", students);
-addStudent(1, "Reyan Abdulmejid", "2002-11-29", "weellyran@gmail.com", "Computer Science");
-addStudent(2, "Wildan Abdulmejid", "2002-11-29", "wildan@gmail.com", "Computer Science");
-addStudent(3, "Ferhan Reyan", "2002-11-29", "ferhan@gmail.com", "Computer Science");
+// console.log("Student Managment System Initialized");
+// console.log("current students:", students);
+// addStudent(1, "Reyan Abdulmejid", "2002-11-29", "weellyran@gmail.com", "Computer Science");
+// addStudent(2, "Wildan Abdulmejid", "2002-11-29", "wildan@gmail.com", "Computer Science");
+// addStudent(3, "Ferhan Reyan", "2002-11-29", "ferhan@gmail.com", "Computer Science");
 
 // console.log("Updated Database:", students);
 

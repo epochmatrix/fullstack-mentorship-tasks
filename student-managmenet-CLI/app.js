@@ -36,13 +36,20 @@ const searchStudent =(id) => {
 
 //update student
 const updateStudent = (id, updatedData) => {
-    
+    const index = students.findIndex(student => student.id === id); 
+
+    if (index !== -1) {
+        students[index] = { ...students[index], ...updatedData };
+        console.log(`Student with ID ${id} updated successfully.`);
+    } else {
+        console.log(`Student with ID ${id} not found.`); 
+    }
 };
 
 //delete student
-const deleteStudent = (id) => {
+// const deleteStudent = (id) => {
 
-}; 
+// }; 
 
 
 console.log("Student Managment System Initialized");
@@ -51,9 +58,13 @@ addStudent(1, "Reyan Abdulmejid", "2002-11-29", "weellyran@gmail.com", "Computer
 addStudent(2, "Wildan Abdulmejid", "2002-11-29", "wildan@gmail.com", "Computer Science");
 addStudent(3, "Ferhan Reyan", "2002-11-29", "ferhan@gmail.com", "Computer Science");
 
-console.log("Updated Database:", students);
+// console.log("Updated Database:", students);
 
+// listStudents();
+
+// searchStudent(2);
+// searchStudent(5);
+
+updateStudent(3, { email: "ferhan_new@gmail.com", department: "Software Engineering" });
 listStudents();
 
-searchStudent(2);
-searchStudent(5);

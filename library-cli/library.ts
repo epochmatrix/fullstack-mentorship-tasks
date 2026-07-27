@@ -21,7 +21,7 @@ export const rl = readline.createInterface({
 console.log("Library Management System Core Configuration Initialized!");
 
 // 4.  Function to add a book to the library
-eport const addBook = (id: string, title: string, author: string): void => {
+export const addBook = (id: string, title: string, author: string): void => {
     const newBook: Book = {id, title, author, isBorrowed: false};
     library.push(newBook);
     console.log(`Book "${title}" added successfully!`);
@@ -82,3 +82,63 @@ export const listBooks = (): void => {
     });
     console.log("=========================================\n");
 };
+
+// 9. Function to display the library menu and handle user input
+export const showLibraryMenu = (): void => {
+    console.log("\n=== TS Library Management CLI ===");
+    console.log("1. Add a Book");
+    console.log("2. List All Books");
+    console.log("3. Search Book (by Title/Author)");
+    console.log("4. Borrow a Book");
+    console.log("5. Remove a Book");
+    console.log("6. Exit");
+
+    rl.question("\nChoose an option (1-6): ", (choice: string) => {
+        const option = choice.trim();
+
+        switch (option) {
+            case '1':
+                rl.question("Enter Book ID: ", (id) => {
+                    rl.question("Enter Book Title: ", (title) => {
+                        rl.question("Enter Book Author: ", (author) => {
+                            addBook(id.trim(), title.trim(), author.trim());
+                            showLibraryMenu();
+                        });
+                    });
+                });
+                break;
+            case '2':
+                listBooks();
+                showLibraryMenu();
+                break;
+            case '3':
+                rl.question("Enter Title or Author to search: ", (query) => {
+                    searchBook(query.trim());
+                    showLibraryMenu();
+                });
+                break;
+            case '4':
+                rl.question("Enter Book ID to borrow: ", (id) => {
+                    borrowBook(id.trim());
+                    showLibraryMenu();
+                });
+                break;
+            case '5':
+                rl.question("Enter Book ID to remove: ", (id) => {
+                    removeBook(id.trim());
+                    showLibraryMenu();
+                });
+                break;
+            case '6':
+                console.log("\nThank you for visiting the TS Library. Goodbye!");
+                rl.close();
+                break;
+            default:
+                console.log("\nInvalid selection! Please enter a number between 1 and 6.");
+                showLibraryMenu();
+                break;
+        }
+    });
+};
+
+showLibraryMenu();

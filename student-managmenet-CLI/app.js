@@ -20,6 +20,7 @@ const addStudent = (id, name, DOB, email, department) => {
 const listStudents = () => {
     if (students.length === 0) {
         console.log("No students found.");
+        return;
     }; 
 
     console.log("List of Students:");
@@ -53,7 +54,7 @@ const updateStudent = (id, updatedData) => {
     }
 };
 
-delete student
+//delete student
 const deleteStudent = (id) => {
     const studentExists = students.some(student => student.id === id);
 
@@ -156,3 +157,5 @@ const showMenu = () => {
         }
     });   
 };
+console.log("🚀 Starting Student Management App...");
+showMenu();

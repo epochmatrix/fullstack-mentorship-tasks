@@ -149,5 +149,3 @@ export const showLibraryMenu = (): void => {
 };
 
 showLibraryMenu();
-
-

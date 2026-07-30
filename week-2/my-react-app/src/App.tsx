@@ -1,122 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { StudentCard } from './StudentCard';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // የአሬይ መረጃዎች (Array of Objects)
+  const students = [
+    { id: "101", name: "Reyan Abdulmejid", department: "Computer Science", email: "reyan@gmail.com" },
+    { id: "102", name: "Ferhan Abdulmejid", department: "Software Engineering", email: "ferhan@gmail.com" },
+    { id: "103", name: "Wildan Abdulmejid", department: "Data Science", email: "wildan@gmail.com" }
+  ];
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-slate-950 text-white p-8 flex flex-col items-center">
+      <header className="text-center my-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-white mb-2">
+        Student Directory CLI -{'>'} UI
+        </h1>
+        <p className="text-slate-400">
+          React Components, JSX expressions, and TypeScript strictly-typed Props in action.
+        </p>
+      </header>
 
-      <div className="ticks"></div>
+      {/* የካርዶቹ መደርደሪያ (Grid Layout) */}
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-4 mt-6">
+        {students.map((student) => (
+          <StudentCard 
+            key={student.id}
+            id={student.id}
+            name={student.name}
+            department={student.department}
+            email={student.email}
+          />
+        ))}
+      </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <footer className="mt-16 text-xs text-slate-600">
+        Week 2 - Tuesday Learning Exercise
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

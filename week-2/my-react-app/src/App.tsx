@@ -1,7 +1,7 @@
 import { StudentCard } from './StudentCard';
 
 function App() {
-  // የአሬይ መረጃዎች (Array of Objects)
+  // (Array of Objects)
   const students = [
     { id: "101", name: "Reyan Abdulmejid", department: "Computer Science", email: "reyan@gmail.com" },
     { id: "102", name: "Ferhan Abdulmejid", department: "Software Engineering", email: "ferhan@gmail.com" },
@@ -19,7 +19,7 @@ function App() {
         </p>
       </header>
 
-      {/* የካርዶቹ መደርደሪያ (Grid Layout) */}
+      {/* (Grid Layout) */}
       <main className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-4 mt-6">
         {students.map((student) => (
           <StudentCard 

@@ -25,18 +25,19 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-8 flex flex-col items-center">
-      {/* Header section displaying the app main title and description */}
-      <header className="text-center my-10 max-w-2xl">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white mb-3 sm:text-5xl">
-          Team Profile Directory
-        </h1>
-        <p className="text-slate-400 text-base sm:text-lg">
-          A responsive collection of dynamic user profiles. Built with React components, 
-          strict TypeScript schema types, and stylized via Tailwind CSS v4 layout grids.
-        </p>
-      </header>
+  <div className="min-h-screen bg-linear-to-b from-green-50 via-green-200 to-green-900 text-white p-8 flex flex-col items-center">
+    {/* Header */}
+    <header className="text-center my-10 max-w-2xl">
+      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-green-950 mb-4">
+        Team Profile Directory
+      </h1>
 
+      <p className="text-green-900/80 text-base sm:text-lg leading-relaxed">
+        A responsive collection of dynamic user profiles. Built with React
+        components, strict TypeScript schema types, and styled using Tailwind
+        CSS v4.
+      </p>
+    </header>
       {/* Responsive layout managing the profile cards container with auto-centering utility */}
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-4 mt-4 justify-items-center">
         {/* Rendering only the validated, unique set of users */}
@@ -47,17 +48,17 @@ function App() {
       </main>
 
       {/* Footer section with copyright metadata and mentor recognition link */}
-      <footer className="mt-20 mb-6 text-xs text-slate-600 tracking-wide text-center flex flex-col gap-1">
+     <footer className="mt-20 mb-6 py-6 text-sm text-white text-center flex flex-col items-center gap-2 border-t border-green-200/40 backdrop-blur-sm">
         <div>
           &copy; {new Date().getFullYear()} Profile Card App &bull; Fullstack Mentorship Tasks
         </div>
-        <div className="text-slate-500 font-medium">
+        <div className="text-sm font-semibold text-white tracking-wide leading-7 hover:text-green-200 transition-colors duration-300">
           Guided by Mentor:{" "}
-          <a 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-indigo-400/80 hover:text-indigo-400 hover:underline transition duration-200 cursor-pointer font-semibold"
+          <a
+              href="https://github.com/hafsusu"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white font-semibold tracking-wide hover:text-green-300 transition-all duration-300 hover:underline underline-offset-4 decoration-green-300"
           >
             Sumeya Abesha
           </a>

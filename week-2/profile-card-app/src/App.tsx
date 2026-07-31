@@ -16,7 +16,8 @@ function App() {
       </header>
 
       {/* Responsive layout managing the profile cards container */}
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-4 mt-4">
+      {/* Responsive Grid System Layout */}
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-4 mt-4 justify-items-center">
         {USERS_DATA.map((user) => (
           /* Passing dynamic properties via javascript spread operator */
           <ProfileCard key={user.id} {...user} />

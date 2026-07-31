@@ -1,5 +1,5 @@
 // src/components/StudentCard.tsx
-import { type Student } from "./student.types"; // በትክክል እንዲያገኘው
+import { type Student } from "./student.types";
 
 export function StudentCard({ id, name, department, email, avatarUrl }: Student) {
   return (

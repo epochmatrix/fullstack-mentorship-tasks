@@ -40,7 +40,7 @@ function App() {
           >
             Sumeya Abesha
           </a>
-        </div>git commit -m "Refactor: Link mentor name to her official GitHub profile in footer"
+        </div>
 
       </footer>
     </div>

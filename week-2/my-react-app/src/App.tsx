@@ -1,5 +1,4 @@
-import { StudentCard } from './StudentCard';
-
+import { StudentCard } from "./components/StudentCard";
 function App() {
   // (Array of Objects)
   const students = [
@@ -40,3 +39,5 @@ function App() {
 }
 
 export default App;
+
+

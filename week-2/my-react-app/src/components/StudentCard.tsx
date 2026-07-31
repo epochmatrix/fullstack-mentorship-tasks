@@ -1,4 +1,4 @@
-// 1. Props (TypeScript Protection)
+// 1. Props TypeScript Protection
 interface StudentCardProps {
   id: string;
   name: string;
@@ -6,7 +6,7 @@ interface StudentCardProps {
   email: string;
 }
 
-// 2. (Child Component)
+// 2. Child Component
 export function StudentCard({ id, name, department, email }: StudentCardProps) {
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg max-w-sm hover:border-indigo-500 transition duration-300">

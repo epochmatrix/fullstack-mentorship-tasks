@@ -1,75 +1,56 @@
-# React + TypeScript + Vite
+# Team Profile Directory App 📇
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly polished, fully responsive, and strictly-typed React profile directory application built using **React 19**, **Vite 8**, **TypeScript 6**, and **Tailwind CSS v4**. This application showcases advanced component reuse, strict prop configuration, and smart runtime dataset validation.
 
-Currently, two official plugins are available:
+## 🚀 Key Architectural Highlights & Engineering Solutions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. **Component Separation & Single Responsibility**: The core layout is elegantly distributed between `App.tsx` (the orchestrator and validator) and `ProfileCard.tsx` (the clean presentation layer).
+2. **Strict Custom Data-Contracts**: Scalable application logic bound seamlessly to explicit TypeScript interfaces declared externally in `types/user.types.ts`.
+3. **Robust Data Deduplication Logic**: Implemented an automated pre-render pipeline inside `App.tsx` utilizing high-performance Javascript `Set()` structures to capture and remove overlapping student database values (`id` and `socials.github` links), blocking collision issues natively.
+4. **Smart Network Image Resilience**: Engineered failure-safe image rendering logic on raw `<img>` components using native React `onError` hooks. If a remote hosted asset link breaks, it seamlessly hot-swaps to dynamic placeholder text-initials via Dicebear APIs.
+5. **Modern Fluid Responsive Grids**: Constructed a fully dynamic viewing pane using custom Tailwind columns (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`) with strict layout bounds (`justify-items-center`) to deliver uniform centering from 320px mobile viewports up to wide screens.
+6. **Polished Corporate Recognition Header & Footers**: Enhanced footers with interactive, secure (`_blank`, `noreferrer`) external hyperlink anchors connecting viewers directly to the official mentorship leadership profiles.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Built With
 
-## Expanding the ESLint configuration
+*   **React 19** - State-driven Component Ecosystem
+*   **Vite 8** - Modern Lightweight Dev Tools & Hot Module Reloading
+*   **TypeScript 6** - Type-safe Static Checking
+*   **Tailwind CSS v4** - Fast utility-first compiled web stylesheets
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📂 Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/
+│   └── ProfileCard.tsx     # Card view equipped with smart onerror asset bindings
+├── constants/
+│   └── user.constants.ts   # Central mock user registry (Data isolation layer)
+├── types/
+│   └── user.types.ts       # Standalone strict schema contract definitions
+├── App.tsx                 # Master controller pipeline managing layout and security loops
+├── main.tsx                # Native framework orchestration mount
+└── index.css               # Global theme injection config (@import "tailwindcss")
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💻 Getting Started Locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+1. Clone the master folder and step inside the directory:
+   ```bash
+   git clone https://github.com
+   cd week-2/profile-card-app
+   ```
+2. Install the clean utility node dependencies:
+   ```bash
+   npm install
+   ```
+3. Boot up the local runtime Vite build compiler:
+   ```bash
+   npm run dev
+   ```

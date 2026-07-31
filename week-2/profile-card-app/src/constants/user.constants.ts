@@ -10,8 +10,8 @@ export const USERS_DATA: UserProfile[] = [
     avatarUrl: "https://i.pinimg.com/736x/46/88/12/468812df30ab33d9c66397e40be563af.jpg",
     skills: ["React", "TypeScript", "Node.js", "Tailwind"],
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
+      github: "https://github1.com",
+      linkedin: "https://linkedin1.com"
     }
   },
   {
@@ -22,8 +22,8 @@ export const USERS_DATA: UserProfile[] = [
     avatarUrl: "https://i.pinimg.com/736x/55/8f/e3/558fe37f6b6659157465467b070857f0.jpg",
     skills: ["Figma", "Tailwind CSS", "React", "Adobe XD"],
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
+      github: "https://github2.com",
+      linkedin: "https://linkedin2.com"
     }
   },
   {
@@ -34,8 +34,8 @@ export const USERS_DATA: UserProfile[] = [
     avatarUrl: "https://i.pinimg.com/736x/50/15/c0/5015c074ceb4e2bcee05a10df7826187.jpg",
     skills: ["Python", "SQL", "TypeScript", "TensorFlow"],
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com"
+      github: "https://github3.com",
+      linkedin: "https://linkedin3.com"
     }
   }
 ];

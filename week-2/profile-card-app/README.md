@@ -43,7 +43,7 @@ src/
 
 1. Clone the master folder and step inside the directory:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/epochmatrix
    cd week-2/profile-card-app
    ```
 2. Install the clean utility node dependencies:

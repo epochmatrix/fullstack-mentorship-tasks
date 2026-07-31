@@ -45,7 +45,7 @@ Follow these steps to run the application locally:
 
 1. Clone the repository:
    ```bash
-   git clone <your-repository-url>
+   git clone <[epochmatrix](https://github.com/epochmatrix)>
    ```
 2. Install dependencies:
    ```bash
